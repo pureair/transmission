@@ -3,7 +3,7 @@
 
 # Below is a command that will get a list of trackers with one tracker per line
 # command can be 'cat /some/path/trackers.txt' for a static list
-LIVE_TRACKERS_LIST_CMD='curl -fs --url https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best_ip.txt' 
+LIVE_TRACKERS_LIST_CMD='curl -fs --url https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_http.txt' 
 
 TRANSMISSION_REMOTE='/usr/bin/transmission-remote'
 
@@ -28,26 +28,28 @@ fi
 
 TRACKER_LIST=`$LIVE_TRACKERS_LIST_CMD`
 if [ $? -ne 0 ] || [ -z "$TRACKER_LIST" ]; then
-	TRACKER_LIST="udp://tracker.skyts.net:6969/announce
-udp://tracker.safe.moe:6969/announce
-udp://tracker.piratepublic.com:1337/announce
-udp://tracker.pirateparty.gr:6969/announce
-udp://tracker.leechers-paradise.org:6969/announce
-udp://tracker.coppersurfer.tk:6969/announce
-udp://allesanddro.de:1337/announce
-udp://9.rarbg.com:2710/announce
-http://p4p.arenabg.com:1337/announce
-udp://packages.crunchbangplusplus.org:6969/announce
-udp://p4p.arenabg.com:1337/announce
-http://tracker.opentrackr.org:1337/announce
-udp://tracker.opentrackr.org:1337/announce
-udp://wambo.club:1337/announce
-udp://trackerxyz.tk:1337/announce
-udp://tracker4.itzmx.com:2710/announce
-udp://tracker2.christianbro.pw:6969/announce
-udp://tracker1.xku.tv:6969/announce
-udp://tracker1.wasabii.com.tw:6969/announce
-udp://tracker.zer0day.to:1337/announce"
+	TRACKER_LIST="http://retracker.mgts.by:80/announce
+http://tracker.city9x.com:2710/announce
+http://0d.kebhana.mx:443/announce
+http://retracker.telecom.by:80/announce
+http://open.acgnxtracker.com:80/announce
+http://alpha.torrenttracker.nl:443/announce
+http://tracker2.itzmx.com:6961/announce
+http://tracker.vanitycore.co:6969/announce
+http://tracker.torrentyorg.pl:80/announce
+http://tracker.tfile.me:80/announce
+http://tracker.mg64.net:6881/announce
+http://tracker.internetwarriors.net:1337/announce
+http://tracker.electro-torrent.pl:80/announce
+http://t.nyaatracker.com:80/announce
+http://share.camoe.cn:8080/announce
+http://open.acgtracker.com:1096/announce
+http://omg.wtftrackr.pw:1337/announce
+http://mgtracker.org:6969/announce
+http://fxtt.ru:80/announce
+http://bt.dl1234.com:80/announce
+http://agusiq-torrents.pl:6969/announce
+http://104.238.198.186:8000/announce"
 
 fi
 
